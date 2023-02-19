@@ -12,6 +12,9 @@ import javax.servlet.http.Part;
 import java.io.IOException;
 import java.util.Collection;
 
+/**
+ * 서블릿을 통한 파일 업로드
+ */
 @Slf4j
 @Controller
 @RequestMapping("/servlet/v1")
