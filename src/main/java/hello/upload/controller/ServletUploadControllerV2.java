@@ -17,6 +17,9 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 
+/**
+ * 실제 파일을 서버에 업로 - 복잡
+ */
 @Slf4j
 @Controller
 @RequestMapping("/servlet/v2")
@@ -30,7 +33,7 @@ public class ServletUploadControllerV2 {
     }
 
     @PostMapping("/upload")
-    public String saveFileV1(HttpServletRequest request) throws ServletException, IOException {
+    public String saveFileV2(HttpServletRequest request) throws ServletException, IOException {
         log.info("request={}", request);
 
         String itemName = request.getParameter("itemName");
