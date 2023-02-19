@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * 실제 파일 업로드, 다운로드 구현
+ */
 @Component
 public class FileStore {
     @Value("${file.dir}")
@@ -39,8 +42,8 @@ public class FileStore {
         }
 
         String originalFilename = multipartFile.getOriginalFilename();
-        String storeFileName = createStoreFileName(originalFilename);
-        multipartFile.transferTo(new File(getFullPath(storeFileName)));
+        String storeFileName = createStoreFileName(originalFilename); //업로드 파일 명
+        multipartFile.transferTo(new File(getFullPath(storeFileName))); //파일 저장
         return new UploadFile(originalFilename, storeFileName);
     }
 
